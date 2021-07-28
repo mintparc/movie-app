@@ -3,12 +3,14 @@ A movie app with React 🌊
 <br/><br/>
 
 ## Tech Stack
-<img src="https://img.shields.io/badge/React-125D98?style=flat-square&logo=React&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/HTML5-B2B1B9?style=flat-square&logo=HTML5&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/CSS3-E98580?style=flat-square&logo=CSS3&logoColor=white"/></a> 
+<img src="https://img.shields.io/badge/React-7DEDFF?style=flat-square&logo=React&logoColor=white"/></a>
 <br/><br/>
 
 ## Start
 ```
-
+npm run build
 ```
 <br/>
 
