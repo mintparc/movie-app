@@ -1,5 +1,5 @@
 # Movie App
-A movie app made out of React 🌊
+A movie app with React 🌊
 <br/><br/>
 
 ## Tech Stack
