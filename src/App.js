@@ -9,7 +9,8 @@ class App extends React.Component {
     movies: []
   }
   getMovies = async () => {
-    const { data: { data: { movies } } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=rating')
+    const { data: { data: { movies: main } } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=rating&limit=1')
+    const { data: { data: { movies } } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=like_count')
     this.setState({ movies, isLoading: false })
   }
   componentDidMount() {
@@ -29,7 +30,6 @@ class App extends React.Component {
               <Movie
                 key={movie.id}
                 id={movie.id}
-                year={movie.year}
                 title={movie.title}
                 summary={movie.summary}
                 poster={movie.medium_cover_image}
