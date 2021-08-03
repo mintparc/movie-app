@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 import Movie from './Movie'
+import Skeleton from './Skeleton'
 import './App.css'
 
 class App extends React.Component {
@@ -22,7 +23,9 @@ class App extends React.Component {
       <section className="container">
         {isLoading ? (
           <div className="loader">
-            <span className="loader_text">Loading...</span>
+            {Array(20).fill('').map(() => (
+              <Skeleton />
+            ))}
           </div>
         ) : ( 
           <div className="movies">

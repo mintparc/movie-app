@@ -10,6 +10,7 @@ body {
 
 .loader {}
 
+.loader,
 .movies {
   display: flex;
   gap: 50px 20px;
