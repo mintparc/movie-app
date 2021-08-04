@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios'
+import Main from './Main'
 import Movie from './Movie'
 import Skeleton from './Skeleton'
 import './App.css'
@@ -7,18 +8,19 @@ import './App.css'
 class App extends React.Component {
   state = {
     isLoading: true,
+    main: [],
     movies: []
   }
   getMovies = async () => {
-    const { data: { data: { movies: main } } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=rating&limit=1')
+    const { data: { data: { movies: { 0: main } } } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?limit=1&sort_by=like_count&page=3')
     const { data: { data: { movies } } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=like_count')
-    this.setState({ movies, isLoading: false })
+    this.setState({ main, movies, isLoading: false })
   }
   componentDidMount() {
     this.getMovies()
   }
   render() {
-    const { isLoading, movies } = this.state
+    const { isLoading, main, movies } = this.state
     return (
       <section className="container">
         {isLoading ? (
@@ -29,6 +31,14 @@ class App extends React.Component {
           </div>
         ) : ( 
           <div className="movies">
+            <Main 
+              key={main.id}
+              id={main.id}
+              title={main.title}
+              summary={main.summary}
+              poster={main.medium_cover_image}
+              bg={main.background_image_original}
+            />
             {movies.map(movie => (
               <Movie
                 key={movie.id}
