@@ -9,6 +9,60 @@
 }
 
 .skeleton {
+  display: flex;
+  gap: 50px 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5%;
+}
+
+.skeleton_main {
+  position: relative;
+  width: 100vw;
+  height: 700px;
+  background-color: #fff;
+}
+
+.skeleton_main_poster {
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  width: 250px;
+  height: 375px;
+  border-radius: 5px;
+  box-shadow: -2px 6px 19px 0px #d5d6dd;
+}
+
+.skeleton_main_title {
+  position: absolute;
+  top: 230px;
+  right: 20px;
+  padding: 0 30px;
+  width: 360px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.skeleton_main_summary {
+  position: absolute;
+  width: 700px;
+  bottom: 50px;
+  right: 20px;
+  padding: 0 30px;
+  width: 760px;
+  height: 260px;
+  border-radius: 5px;
+}
+
+.skeleton_movie {
+  display: flex;
+  gap: 50px 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 1.5%;
+}
+
+.skeleton_movies {
   position: relative;
   display: flex;
   flex-basis: 49%;
@@ -23,7 +77,7 @@
   box-shadow: rgba(0, 0, 0, 0.024) -1px 1px 1px;
 }
 
-.skeleton_img {
+.skeleton_movies_img {
   position: absolute;
   top: -20px;
   left: 20px;
@@ -33,35 +87,38 @@
   box-shadow: -2px 6px 19px 0px #d5d6dd;
 }
 
-.skeleton_data {
+.skeleton_movies_data {
   position: absolute;
   left: 200px;
   padding: 0 30px;
 }
 
-.skeleton_title {
+.skeleton_movies_title {
   width: 360px;
   height: 29px;
   border-radius: 5px;
 }
 
-.skeleton_genres {
+.skeleton_movies_genres {
   width: 290px;
   height: 27px;
   border-radius: 5px;
 }
 
-.skeleton_summary {
+.skeleton_movies_summary {
   width: 360px;
   height: 85px;
   margin-top: 50px;
   border-radius: 5px;
 }
 
-.skeleton_img,
-.skeleton_title,
-.skeleton_genres,
-.skeleton_summary {
+.skeleton_main_poster,
+.skeleton_main_title,
+.skeleton_main_summary,
+.skeleton_movies_img,
+.skeleton_movies_title,
+.skeleton_movies_genres,
+.skeleton_movies_summary {
   background-color: var(--loading-grey);
   background: linear-gradient(120deg,
       rgba(255, 255, 255, 0) 40%,

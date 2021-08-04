@@ -24,11 +24,7 @@ class App extends React.Component {
     return (
       <section className="container">
         {isLoading ? (
-          <div className="loader">
-            {Array(20).fill('').map(() => (
-              <Skeleton />
-            ))}
-          </div>
+          <Skeleton />
         ) : ( 
           <div className="movies">
             <Main 
@@ -39,6 +35,7 @@ class App extends React.Component {
               poster={main.medium_cover_image}
               bg={main.background_image_original}
             />
+            <div className="movie">
             {movies.map(movie => (
               <Movie
                 key={movie.id}
@@ -49,6 +46,7 @@ class App extends React.Component {
                 genres={movie.genres}
               />
             ))}
+            </div>
           </div>
         )}
       </section>

@@ -1,7 +1,7 @@
 .movies_main {
   position: relative;
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 700px;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -26,11 +26,11 @@
 
 .movies_main .main_title {
   position: absolute;
-  top: 300px;
+  top: 180px;
   right: 20px;
   padding: 0 30px;
   color: #fff;
-  font-size: 34px;
+  font-size: 47px;
 }
 
 .movies_main .main_summary {
