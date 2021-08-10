@@ -3,6 +3,7 @@
   gap: 50px 20px;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 1920px;
   margin: 0 1.5%;
 }
 
@@ -11,7 +12,7 @@
   display: flex;
   flex-basis: 49%;
   min-width: 625px;
-  max-width: 650px;
+  max-width: 625px;
   height: 280px;
   padding: 20px;
   background: #fff;
@@ -21,7 +22,7 @@
   box-shadow: rgba(0, 0, 0, 0.024) -1px 1px 1px;
 }
 
-.movies_movie img {
+.movies_movie .movie_poster {
   position: absolute;
   top: -20px;
   left: 20px;
@@ -31,9 +32,22 @@
   cursor: pointer;
 }
 
-.movies_movie img:hover {
+.movies_movie .movie_poster:hover {
   top: -31px;
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.movies_movie .movie_heart {
+  width: 28px;
+  height: 28x;
+  position: absolute;
+  top: 0;
+  left: 375px;
+  cursor: pointer;
+}
+
+.movies_movie .movie_heart.hide {
+  display: none;
 }
 
 .movies_movie .movie_data {

@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios'
-import Main from './Main'
-import Movie from './Movie'
-import Skeleton from './Skeleton'
+import Main from './components/Main/Main'
+import Movie from './components/Movie/Movie'
+import Skeleton from './components//Skeleton/Skeleton'
 import './App.css'
 
 class App extends React.Component {
@@ -39,7 +39,7 @@ class App extends React.Component {
             {movies.map(movie => (
               <Movie
                 key={movie.id}
-                id={movie.id}
+                id={movie.id.toString()}
                 title={movie.title}
                 summary={movie.summary}
                 poster={movie.medium_cover_image}
