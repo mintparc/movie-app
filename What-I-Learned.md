@@ -123,5 +123,7 @@ Each child in a list should have a unique "key" prop.
 ```
 JSX를 사용하여 배열로 목록을 생성할 때는 `unique한 key`를 `element`에 부여해줘야 한다.
 
+<br/>
+
 ## 참고
 * [Life-cycle](https://react.vlpt.us/basic/25-lifecycle.html)
