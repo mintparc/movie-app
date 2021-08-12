@@ -52,7 +52,7 @@ function Movie({ id, title, summary, poster, genres }) {
     <div className="movies_movie">
       <img className="movie_poster" src={poster} alt={title} />
       <div className="movie_data">
-        <img className="movie_heart" id={id} src={favorite.img} onClick={favorite.onclick}></img>
+        <img className="movie_heart" id={id} src={favorite.img} onClick={favorite.onclick} alt="heart"></img>
         <h3 className="movie_title">{title}</h3>
         <ul className="movie_genres">{genres.slice(0, 3).map((genre, index) => <li key={index} className="genres_genre">{genre}</li>)}</ul>
         <p className="movie_summary">{summary}</p>

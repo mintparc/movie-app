@@ -1,5 +1,7 @@
 import React from 'react'
 import './Skeleton.css'
+import SkeletonHeart from './../../assets/skeleton-heart.svg';
+
 
 function Skeleton() {
   return (
@@ -14,6 +16,7 @@ function Skeleton() {
           <div className="skeleton_movies" key={index}>
             <div className="skeleton_movies_img"></div>
             <div className="skeleton_movies_data">
+              <img className="skeleton_movies_heart" src={SkeletonHeart} alt="heart"></img>
               <p className="skeleton_movies_title"></p>
               <p className="skeleton_movies_genres"></p>
               <p className="skeleton_movies_summary"></p>

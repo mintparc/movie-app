@@ -18,7 +18,7 @@
   position: absolute;
   bottom: 50px;
   left: 5%;
-  width: 250px;
+  max-width: 250px;
   border-radius: 5px;
   box-shadow: -2px 6px 19px 0px #7f818e;
   cursor: pointer;
@@ -34,10 +34,26 @@
 
 .movies_main .main_summary {
   position: absolute;
-  width: 700px;
+  width: 50%;
   bottom: 50px;
   right: 4%;
   color: #fff;
   font-size: 16px;
   text-align: right;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+}
+
+@media only screen and (max-width: 720px) {
+  .movies_main .main_poster {
+    display: none;
+  }
+
+  .movies_main .main_summary {
+    width: 70%;
+  }
 }

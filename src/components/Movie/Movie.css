@@ -46,10 +46,6 @@
   cursor: pointer;
 }
 
-.movies_movie .movie_heart.hide {
-  display: none;
-}
-
 .movies_movie .movie_data {
   position: absolute;
   left: 200px;
@@ -92,4 +88,43 @@
   overflow: hidden;
   font-size: 14px;
   line-height: 1.7;
+}
+
+@media only screen and (max-width: 720px) {
+  .movies_movie {
+    min-width: 380px;
+    height: 270px;
+    padding: 0px;
+    border: unset;
+  }
+
+  .movies_movie .movie_poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 270px;
+    border-radius: 5px 0 0 5px;
+    box-shadow: unset;
+    cursor: pointer;
+  }
+
+  .movies_movie .movie_data {
+    left: 180px;
+    padding: 12px;
+  }
+
+  .movies_movie .movie_heart {
+    position: unset;
+    margin-bottom: 10px;
+  }
+
+  .movie_data .movie_genres {
+    display: none;
+  }
+
+  .movie_data .movie_summary {
+    margin: 30px 0 0;
+  }
+
 }

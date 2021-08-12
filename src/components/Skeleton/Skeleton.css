@@ -27,6 +27,7 @@
   position: absolute;
   bottom: 50px;
   left: 5%;
+  max-width: 250px;
   width: 250px;
   height: 375px;
   border-radius: 5px;
@@ -44,10 +45,9 @@
 
 .skeleton_main_summary {
   position: absolute;
-  width: 700px;
   bottom: 50px;
   right: 4%;
-  width: 760px;
+  width: 50%;
   height: 260px;
   border-radius: 5px;
 }
@@ -91,8 +91,17 @@
   padding: 0 30px;
 }
 
+.skeleton_movies_heart {
+  width: 28px;
+  height: 28x;
+  position: absolute;
+  top: 0;
+  left: 375px;
+  cursor: pointer;
+}
+
 .skeleton_movies_title {
-  width: 360px;
+  width: 300px;
   height: 29px;
   border-radius: 5px;
 }
@@ -125,4 +134,56 @@
   background-size: 220% 100%;
   background-position-x: 120%;
   animation: 1s loading ease-in-out infinite;
+}
+
+@media only screen and (max-width: 720px) {
+  .skeleton_main_poster {
+    display: none;
+  }
+
+  .skeleton_main_summary {
+    width: 70%;
+  }
+
+  .skeleton_movies {
+    min-width: 380px;
+    height: 270px;
+    padding: 0px;
+    border: unset;
+  }
+
+  .skeleton_movies_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 270px;
+    border-radius: 5px 0 0 5px;
+    box-shadow: unset;
+    cursor: pointer;
+  }
+
+  .skeleton_movies_data {
+    left: 180px;
+    padding: 12px;
+  }
+
+  .skeleton_movies_heart {
+    position: unset;
+    margin-bottom: 10px;
+  }
+
+  .skeleton_movies_title {
+    width: 174px;
+  }
+
+  .skeleton_movies_genres {
+    display: none;
+  }
+
+  .skeleton_movies_summary {
+    width: 176px;
+    margin: 30px 0 0;
+  }
+
 }

@@ -13,7 +13,7 @@ class App extends React.Component {
   }
   getMovies = async () => {
     const { data: { data: { movies: { 0: main } } } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?limit=1&sort_by=like_count&page=3')
-    const { data: { data: { movies } } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=like_count')
+    const { data: { data: { movies } } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=like_count&quality=3D')
     this.setState({ main, movies, isLoading: false })
   }
   componentDidMount() {
