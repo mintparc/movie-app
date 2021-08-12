@@ -8,11 +8,9 @@ A movie app with React 🌊
 <img src="https://img.shields.io/badge/React-7DEDFF?style=flat-square&logo=React&logoColor=white"/></a>
 <br/><br/>
 
-## Start
-```
-npm run build
-```
-<br/>
+## Web
+https://mintparc.github.io/movie-app/
+<br/><br/>
 
 ## Git Commit Rule
 `use Gitmoji`
