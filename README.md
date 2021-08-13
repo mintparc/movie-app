@@ -12,7 +12,7 @@ A movie app with React 🌊
 https://mintparc.github.io/movie-app/
 <br/><br/>
 
-## What I Leaned
+## What I Learned
 [프로젝트를 통해 배운 것들](./What-I-Learned.md)
 <br/><br/>
 
