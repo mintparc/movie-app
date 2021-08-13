@@ -1,28 +1,32 @@
 # 🏷 프로젝트를 통해 배운 것들
-* [1. Protection with PropTypes](#1-protection-with-proptypes)
-  + [1-1. Install prop-types](#1-1-install-prop-types)
-  + [1-2. Import prop-types](#1-2-import-prop-types)
-  + [1-3. How to Use](#1-3-how-to-use)
-* [2. State](#2-state)
-  + [2-1. How to Use](#2-1-how-to-use)
+  * [1.Protection with PropTypes](#1protection-with-proptypes)
+    + [1-1.Install prop-types](#1-1install-prop-types)
+    + [1-2.Import prop-types](#1-2import-prop-types)
+    + [1-3.How to Use](#1-3how-to-use)
+  * [2.State](#2state)
+    + [2-1.How to Use](#2-1how-to-use)
+  * [3.Life Cycle](#3life-cycle)
+  * [4.Axios](#4axios)
+    + [4-1.Install axios](#4-1install-axios)
+    + [4-2.What is Axios](#4-2what-is-axios)
+  * [10.내가 마주한 에러](#10내가-마주한-에러)
+  * [참고](#참고)
 <br/><br/>
 
-## 1. Protection with PropTypes
-<br/>
-
-### 1-1. Install prop-types
+## 1.Protection with PropTypes
+### 1-1.Install prop-types
 ```
 npm i prop-types
 ```
 <br/>
 
-### 1-2. Import prop-types
+### 1-2.Import prop-types
 ```javascript
 import PropTypes from 'prop-types'
 ```
 <br/>
 
-### 1-3. How to Use
+### 1-3.How to Use
 ```javascript
 function Food({ name, picture, rating }) {
   return (
@@ -42,11 +46,11 @@ Food.propTypes = {
 ```
 <br/>
 
-## 2. State
+## 2.State
 `Use with Dynamic Data`  
 <br/>
 
-### 2-1. How to Use
+### 2-1.How to Use
 ```javascript
 class App extends React.Component {
   // state is an object and changes
@@ -71,7 +75,7 @@ class App extends React.Component {
 ```
 <br/>
 
-## 3. Life Cycle
+## 3.Life Cycle
 > 마운트
 
 메서드 | 설명
@@ -103,20 +107,20 @@ class App extends React.Component {
 
 <br/>
 
-## 4. Axios
-### 4-1. Install axios
+## 4.Axios
+### 4-1.Install axios
 ```
 npm i axios
 ```
 <br/>
 
-### 4-2. What is Axios
+### 4-2.What is Axios
 > Axios는 HTTP통신을 하는데 매우 인기있는 Javascript 라이브러리이다.  Axios는 Promise를 기반으로하여 async/await문법을 사용하여 XHR요청을 매우 쉽게 할 수 있다.
 
 <br/><br/>
 
 
-## 10. 내가 마주한 에러
+## 10.내가 마주한 에러
 > React key prop
 ```console
 Each child in a list should have a unique "key" prop.
