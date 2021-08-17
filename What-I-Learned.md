@@ -9,6 +9,8 @@
   * [4. Axios](#4-axios)
     + [4-1. Install axios](#4-1-install-axios)
     + [4-2. What is Axios](#4-2-what-is-axios)
+    + [4-3. How to Use](#4-3-how-to-use)
+    + [4-4. Http Methods](#4-4-http-methods)
   * [10. 내가 마주한 에러](#10-내가-마주한-에러)
   * [참고](#참고)
 <br/><br/>
@@ -115,10 +117,42 @@ npm i axios
 <br/>
 
 ### 4-2. What is Axios
-> Axios는 HTTP통신을 하는데 매우 인기있는 Javascript 라이브러리이다.  Axios는 Promise를 기반으로하여 async/await문법을 사용하여 XHR요청을 매우 쉽게 할 수 있다.
+> Axios는 HTTP통신을 하는데 매우 인기있는 Javascript 라이브러리이다.  
+> Axios는 `Promise`를 기반으로하여 `async/await`문법을 사용하여 XHR요청을 매우 쉽게 할 수 있다.
 
-<br/><br/>
+<br/>
 
+### 4-3. How to Use
+> 기본 사용방법
+```javascript
+axios.get('/user?ID=12345')
+  // 응답(성공)
+  .then(function (response) {
+    console.log(response);
+  })
+  // 응답(실패)
+  .catch(function (error) {
+    console.log(error);
+  })
+  // 응답(항상 실행)
+  .then(function () {
+    // ...
+  });
+```
+<br/>
+
+### 4-4. Http Methods
+> `method` 부분을 분리하여 사용할 수 있다.
+
+별칭 | 사용
+|---|---|
+`GET`     | `axios.get(url,[,config])`
+`POST`    | `axios.post(url[, data[, config]])`
+`PUT`     | `axios.put(url[, data[, config]])`
+`PATCH`   | `axios.patch(url[, data[, config]]`
+`DELETE`  | `axios.delete(url[, config])`
+
+<br/>
 
 ## 10. 내가 마주한 에러
 > React key prop
@@ -131,3 +165,4 @@ JSX를 사용하여 배열로 목록을 생성할 때는 `unique한 key`를 `ele
 
 ## 참고
 * [Life-cycle](https://react.vlpt.us/basic/25-lifecycle.html)
+* [Axios](https://xn--xy1bk56a.run/axios/s)
