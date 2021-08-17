@@ -3,27 +3,35 @@ import axios from 'axios'
 import Main from './components/Main/Main'
 import Movie from './components/Movie/Movie'
 import Skeleton from './components//Skeleton/Skeleton'
+import Modal from './utils/Modal'
 import './App.css'
 
 class App extends React.Component {
   state = {
     isLoading: true,
     main: [],
-    movies: []
+    movies: [],
+    modal: false
   }
   getMovies = async () => {
     const { data: { data: { movies: { 0: main } } } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?limit=1&sort_by=like_count&page=3')
     const { data: { data: { movies } } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=like_count&quality=3D')
     this.setState({ main, movies, isLoading: false })
   }
-  componentDidMount() {
+  componentDidMount () {
     this.getMovies()
   }
+  openModal = () => {
+    this.setState({ modal: true })
+  }
+  closeModal = () => {
+    this.setState({ modal: false })
+  }
   render() {
-    const { isLoading, main, movies } = this.state
+    let { isLoading, main, movies, modal } = this.state
     return (
       <section className="container">
-        {isLoading ? (
+        { isLoading ? (
           <Skeleton />
         ) : ( 
           <div className="movies">
@@ -44,9 +52,12 @@ class App extends React.Component {
                 summary={movie.summary}
                 poster={movie.medium_cover_image}
                 genres={movie.genres}
+                trailer={movie.yt_trailer_code}
               />
             ))}
             </div>
+            <button onClick={this.openModal}>click me!</button>
+            <Modal open={modal} close={this.closeModal} />
           </div>
         )}
       </section>
