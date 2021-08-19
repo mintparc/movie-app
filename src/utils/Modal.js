@@ -1,23 +1,26 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import YouTube from 'react-youtube';
 import './Modal.css'
 
-function Modal({ open, close }) {
+function Modal({ open, close, videoId }) {
+  const opts = {
+    width: '100%',
+    height: '800',
+    playerVars: {
+      autoplay: 1
+    }
+  }
+
   return(
     <div className={ open ? 'openModal' : 'closeModal'} onClick={close}>
       { open? (
         <section onClick={(e) => e.stopPropagation()}>
+          <YouTube videoId={ videoId } opts={opts}/>
           <button className="close" onClick={close}>close</button>
         </section>
       ) : null }
     </div>
   )
 }
-
-Modal.prototypes = {
-  open: PropTypes.boolean,
-  close: PropTypes.boolean,
-}
-
 
 export default Modal

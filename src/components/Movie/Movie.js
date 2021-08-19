@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import './Movie.css'
 import FillHeart from './../../assets/fill-heart.svg';
 import EmptyHeart from './../../assets/empty-heart.svg';
+import Modal from './../../utils/Modal'
 
-function Movie({ id, title, summary, poster, genres }) {
+function Movie({ id, title, summary, poster, genres, videoId }) {
   let favoriteMovies = []
 
   const saveFavorite = () => {
@@ -48,9 +49,22 @@ function Movie({ id, title, summary, poster, genres }) {
     onclick: favoriteMovies.includes(id) ? handleFavoriteDelete : handleFavorite
   })
 
+  const [ modal, setModal ] = useState(false)
+  const openModal = () => {
+    setModal(true)
+  }
+
+  const closeModal = () => {
+    setModal(false)
+  }
+
   return (
     <div className="movies_movie">
+      <div className="movie_trailer">
+        <button onClick={openModal}>▶︎ Watch Trailer</button>
+      </div>
       <img className="movie_poster" src={poster} alt={title} />
+      <Modal open={modal} close={closeModal} videoId={videoId}/>
       <div className="movie_data">
         <img className="movie_heart" id={id} src={favorite.img} onClick={favorite.onclick} alt="heart"></img>
         <h3 className="movie_title">{title}</h3>
