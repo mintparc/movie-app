@@ -11,6 +11,7 @@
     + [4-2. What is Axios](#4-2-what-is-axios)
     + [4-3. How to Use](#4-3-how-to-use)
     + [4-4. Http Methods](#4-4-http-methods)
+  * [5. BEM](#5-bem)
   * [10. 내가 마주한 에러](#10-내가-마주한-에러)
   * [참고](#참고)
 <br/><br/>
@@ -151,6 +152,39 @@ axios.get('/user?ID=12345')
 `PUT`     | `axios.put(url[, data[, config]])`
 `PATCH`   | `axios.patch(url[, data[, config]]`
 `DELETE`  | `axios.delete(url[, config])`
+
+<br/>
+
+## 5. BEM
+> CSS 방법론 중 하나이다.  
+> **Block-Element-Modifier**
+
+<br/>
+
+`block-name__element-name--modifier` 와 같은 형태로 작성한다.  
+단어와 단어는 하이픈(-)으로 구분을 하며, 소문자를 사용한다.
+
+```css
+/* 
+  card-movie : BLOCK
+  title      : ELEMENT
+  bold       : MODIFIER
+*/
+.card-movie__title--bold {
+  font-weight: bold;
+}
+```
+
+* **Block**
+  + 재사용 가능한 독립적 요소
+  + 태그와 ID선택자를 사용하지 않는다.
+* **Element**
+  + Block 안에서 특정한 기능을 담당
+  + 필수적이지 않다. (block안에 element가 없을 수 있다.)
+* **Modifier**
+  + Block, Element의 속성을 정의 한다.
+    - 상태(show, hidden, disabled ...), 모양(bold, small ...)
+  + 단독으로 사용할 수 없고 `Block__Element--`뒤에 붙여 사용 가능하다.
 
 <br/>
 
