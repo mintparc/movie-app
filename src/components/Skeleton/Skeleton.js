@@ -1,30 +1,30 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import './Skeleton.css'
 import SkeletonHeart from './../../assets/skeleton-heart.svg';
 
 
 function Skeleton() {
   return (
-    <div className="skeleton">
-      <div className="skeleton_main">
-        <div className="skeleton_main_poster"></div>
-        <p className="skeleton_main_title"></p>
-        <p className="skeleton_main_summary"></p>
-      </div>
-      <div className="skeleton_movie">
+    <Fragment>
+      <section className="main-skeleton">
+        <div className="main-skeleton__poster"></div>
+        <p className="main-skeleton__title"></p>
+        <p className="main-skeleton__summary"></p>
+      </section>
+      <section className="list-skeleton">
         {Array(20).fill('').map((value, index) => (
-          <div className="skeleton_movies" key={index}>
-            <div className="skeleton_movies_img"></div>
-            <div className="skeleton_movies_data">
-              <img className="skeleton_movies_heart" src={SkeletonHeart} alt="heart"></img>
-              <p className="skeleton_movies_title"></p>
-              <p className="skeleton_movies_genres"></p>
-              <p className="skeleton_movies_summary"></p>
+          <div className="card-skeleton" key={index}>
+            <div className="card-skeleton__poster"></div>
+            <div className="card-skeleton__data">
+              <img className="card-skeleton__heart" src={SkeletonHeart} alt="heart"></img>
+              <p className="card-skeleton__title"></p>
+              <p className="card-skeleton__genres"></p>
+              <p className="card-skeleton__summary"></p>
             </div>
           </div>
         ))}
-      </div>
-    </div>
+      </section>
+    </Fragment>
   ) 
 }
 

@@ -12,7 +12,7 @@ function Modal({ open, close, videoId }) {
   }
 
   return(
-    <div className={ open ? 'openModal' : 'closeModal'} onClick={close}>
+    <div className={ open ? 'modal modal--open' : 'modal'} onClick={close}>
       { open? (
         <section onClick={(e) => e.stopPropagation()}>
           <YouTube videoId={ videoId } opts={opts}/>

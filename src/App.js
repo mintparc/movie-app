@@ -1,4 +1,4 @@
-import React from 'react';
+import  React, { Fragment } from 'react';
 import axios from 'axios'
 import Main from './components/Main/Main'
 import Movie from './components/Movie/Movie'
@@ -22,20 +22,18 @@ class App extends React.Component {
   render() {
     let { isLoading, main, movies } = this.state
     return (
-      <section className="container">
+      <main className="container">
         { isLoading ? (
           <Skeleton />
         ) : ( 
-          <div className="movies">
+          <Fragment>
             <Main 
-              key={main.id}
-              id={main.id}
               title={main.title}
               summary={main.summary}
               poster={main.medium_cover_image}
               bg={main.background_image_original}
             />
-            <div className="movie">
+            <section className="list-movie">
             {movies.map(movie => (
               <Movie
                 key={movie.id}
@@ -47,10 +45,10 @@ class App extends React.Component {
                 videoId={movie.yt_trailer_code}
               />
             ))}
-            </div>
-          </div>
+            </section>
+          </Fragment>
         )}
-      </section>
+      </main>
     )}
   }
 

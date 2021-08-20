@@ -1,9 +1,5 @@
-.closeModal {
+.modal {
   display: none;
-}
-
-.openModal {
-  display: flex;
   align-items: center;
   position: fixed;
   top: 0;
@@ -16,7 +12,11 @@
   z-index: 20;
 }
 
-.openModal section {
+.modal--open {
+  display: flex;
+}
+
+.modal section {
   position: relative;
   width: 70%;
   min-height: 400px;
@@ -28,7 +28,7 @@
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.openModal section button {
+.modal section button {
   position: absolute;
   right: 12px;
   bottom: 12px;
@@ -42,12 +42,12 @@
   cursor: pointer;
 }
 
-.openModal section button:hover {
+.modal section button:hover {
   background: #dfdfdf;
 }
 
 @media only screen and (max-width: 720px) {
-  .openModal section button {
+  .modal section button {
     left: 50%;
     transform: translateX(-50%);
   }

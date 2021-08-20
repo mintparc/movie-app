@@ -1,13 +1,4 @@
-.movie {
-  display: flex;
-  gap: 50px 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 1920px;
-  margin: 0 1.5%;
-}
-
-.movies_movie {
+.card-movie {
   position: relative;
   display: flex;
   flex-basis: 49%;
@@ -22,7 +13,7 @@
   box-shadow: rgba(0, 0, 0, 0.024) -1px 1px 1px;
 }
 
-.movies_movie .movie_poster {
+.card-movie__poster {
   position: absolute;
   top: -20px;
   left: 20px;
@@ -32,12 +23,7 @@
   cursor: pointer;
 }
 
-/* .movies_movie .movie_poster:hover {
-  top: -31px;
-  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-} */
-
-.movies_movie .movie_trailer {
+.card-movie__trailer {
   position: absolute;
   top: -20px;
   left: 20px;
@@ -48,10 +34,9 @@
   z-index: 10;
 }
 
-.movies_movie .movie_trailer button {
+.card-movie__trailer button {
   opacity: 0;
   position: absolute;
-  /* width: 180px; */
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
@@ -65,24 +50,24 @@
   cursor: pointer;
 }
 
-.movies_movie .movie_trailer:hover {
+.card-movie__trailer:hover {
   top: -30px;
   background: rgba(0, 0, 0, 0.7);
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.movies_movie .movie_trailer:hover>button {
+.card-movie__trailer:hover>button {
   opacity: 1;
   top: 45%;
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.movies_movie .movie_trailer:hover+.movie_poster {
+.card-movie__trailer:hover+.card-movie__poster {
   top: -30px;
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.movies_movie .movie_heart {
+.card-movie__heart {
   width: 28px;
   height: 28x;
   position: absolute;
@@ -91,19 +76,19 @@
   cursor: pointer;
 }
 
-.movies_movie .movie_data {
+.card-movie__data {
   position: absolute;
   left: 200px;
   padding: 0 30px;
   overflow: hidden;
 }
 
-.movie_data .movie_title {
+.card-movie__title {
   margin: 0 0 12px 2px;
   font-size: 20px;
 }
 
-.movie_data .movie_genres {
+.card-movie__genres {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -112,7 +97,7 @@
   font-size: 12px;
 }
 
-.movie_data .movie_genres li {
+.card-movie__genre {
   margin-right: 4px;
   margin-bottom: 4px;
   padding: 4px 8px;
@@ -123,7 +108,7 @@
   cursor: pointer;
 }
 
-.movie_data .movie_summary {
+.card-movie__summary {
   margin-top: 60px;
   width: fit-content;
   white-space: normal;
@@ -136,14 +121,15 @@
 }
 
 @media only screen and (max-width: 720px) {
-  .movies_movie {
+  .card-movie {
     min-width: 380px;
     height: 270px;
     padding: 0px;
     border: unset;
   }
 
-  .movies_movie .movie_poster {
+  .card-movie__trailer,
+  .card-movie__poster {
     position: absolute;
     top: 0;
     left: 0;
@@ -154,21 +140,21 @@
     cursor: pointer;
   }
 
-  .movies_movie .movie_data {
+  .card-movie__data {
     left: 180px;
     padding: 12px;
   }
 
-  .movies_movie .movie_heart {
+  .card-movie__heart {
     position: unset;
     margin-bottom: 10px;
   }
 
-  .movie_data .movie_genres {
+  .card-movie__genres {
     display: none;
   }
 
-  .movie_data .movie_summary {
+  .card-movie__summary {
     margin: 30px 0 0;
   }
 

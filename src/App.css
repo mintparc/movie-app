@@ -6,12 +6,19 @@ body {
   background: #eaebec;
 }
 
-.container {}
-
-.movies {
+/* .list-movie {
   display: flex;
   gap: 50px 20px;
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 5%;
+} */
+
+.list-movie {
+  display: flex;
+  gap: 50px 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1920px;
+  margin: 5% 1.5%;
 }

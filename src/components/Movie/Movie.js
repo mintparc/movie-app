@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import './Movie.css'
 import FillHeart from './../../assets/fill-heart.svg';
@@ -59,19 +59,23 @@ function Movie({ id, title, summary, poster, genres, videoId }) {
   }
 
   return (
-    <div className="movies_movie">
-      <div className="movie_trailer">
-        <button onClick={openModal}>▶︎ Watch Trailer</button>
+    <Fragment>
+      <div className="card-movie">
+        <div className="card-movie__trailer">
+          <button onClick={openModal}>▶︎ Watch Trailer</button>
+        </div>
+        <img className="card-movie__poster" src={poster} alt={title} />
+        <div className="card-movie__data">
+          <img className="card-movie__heart" id={id} src={favorite.img} onClick={favorite.onclick} alt="heart"></img>
+          <h3 className="card-movie__title">{title}</h3>
+          <ul className="card-movie__genres">{genres.slice(0, 3).map((genre, index) => 
+            <li key={index} className="card-movie__genre">{genre}</li>)}
+          </ul>
+          <p className="card-movie__summary">{summary}</p>
+        </div>
       </div>
-      <img className="movie_poster" src={poster} alt={title} />
       <Modal open={modal} close={closeModal} videoId={videoId}/>
-      <div className="movie_data">
-        <img className="movie_heart" id={id} src={favorite.img} onClick={favorite.onclick} alt="heart"></img>
-        <h3 className="movie_title">{title}</h3>
-        <ul className="movie_genres">{genres.slice(0, 3).map((genre, index) => <li key={index} className="genres_genre">{genre}</li>)}</ul>
-        <p className="movie_summary">{summary}</p>
-      </div>
-    </div>
+    </Fragment>
   ) 
 }
 
