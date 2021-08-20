@@ -3,24 +3,39 @@ import axios from 'axios'
 import Main from './components/Main/Main'
 import Movie from './components/Movie/Movie'
 import Skeleton from './components//Skeleton/Skeleton'
+import Modal from './utils/Modal'
 import './App.css'
 
 class App extends React.Component {
   state = {
     isLoading: true,
+    isModalOpen: false,
     main: [],
-    movies: []
+    movies: [],
+    videoId: ''
   }
+
   getMovies = async () => {
     const { data: { data: { movies: { 0: main } } } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?limit=1&sort_by=like_count&genre=animation&page=4')
     const { data: { data: { movies } } } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=like_count&quality=3D&genre=animation&page=2')
     this.setState({ main, movies, isLoading: false })
   }
+
   componentDidMount () {
     this.getMovies()
   }
+
+  handleModalOpen = (videoId) => {
+    this.setState({ isModalOpen: true, videoId: videoId })
+  }
+  
+  handleModalClose = () => {
+    this.setState({ isModalOpen: false })
+  }
+
   render() {
-    let { isLoading, main, movies } = this.state
+    const { isLoading, main, movies, isModalOpen, videoId } = this.state
+
     return (
       <main className="container">
         { isLoading ? (
@@ -43,9 +58,11 @@ class App extends React.Component {
                 poster={movie.medium_cover_image}
                 genres={movie.genres}
                 videoId={movie.yt_trailer_code}
+                handleModalOpen={this.handleModalOpen.bind(this, movie.yt_trailer_code)}
               />
             ))}
             </section>
+            <Modal open={isModalOpen} close={this.handleModalClose} videoId={videoId} />
           </Fragment>
         )}
       </main>

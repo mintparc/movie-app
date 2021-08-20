@@ -188,6 +188,9 @@ axios.get('/user?ID=12345')
 
 <br/>
 
+## 6. Portal
+
+
 ## 10. 내가 마주한 에러
 > React key prop
 ```console
@@ -197,6 +200,22 @@ JSX를 사용하여 배열로 목록을 생성할 때는 `unique한 key`를 `ele
 
 <br/>
 
+> Maximum update depth exceeded
+```console
+Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.
+```
+컴포넌트로 함수를 전달할 때는 함수를 호출하지 않는 지 확인해야한다.  
+즉, 괄호없이 함수 그 자체를 전달해야한다.  
+
+***나의 실수***  
+`handleModalOpen={this.handleModalOpen(movie.yt_trailer_code)}`  
+Render 될 때마다 `handleModalOpen()` 함수를 **호출**하고 있기 때문에 무한루프가 발생하며 에러를 띄운다.
+
+따라서 `handleModalOpen={this.handleModalOpen.bind(this, movie.yt_trailer_code)}` 형식의 `.bind`를 사용한다.
+
+<br/>
+
 ## 참고
 * [Life-cycle](https://react.vlpt.us/basic/25-lifecycle.html)
 * [Axios](https://xn--xy1bk56a.run/axios/s)
+* [컴포넌트에 함수 전달하기](https://ko.reactjs.org/docs/faq-functions.html)

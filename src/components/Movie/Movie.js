@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import './Movie.css'
 import FillHeart from './../../assets/fill-heart.svg';
 import EmptyHeart from './../../assets/empty-heart.svg';
-import Modal from './../../utils/Modal'
 
-function Movie({ id, title, summary, poster, genres, videoId }) {
+function Movie({ id, title, summary, poster, genres, handleModalOpen }) {
   let favoriteMovies = []
 
   const saveFavorite = () => {
@@ -49,20 +48,11 @@ function Movie({ id, title, summary, poster, genres, videoId }) {
     onclick: favoriteMovies.includes(id) ? handleFavoriteDelete : handleFavorite
   })
 
-  const [ modal, setModal ] = useState(false)
-  const openModal = () => {
-    setModal(true)
-  }
-
-  const closeModal = () => {
-    setModal(false)
-  }
-
   return (
     <Fragment>
       <div className="card-movie">
         <div className="card-movie__trailer">
-          <button onClick={openModal}>▶︎ Watch Trailer</button>
+          <button onClick={handleModalOpen}>▶︎ Watch Trailer</button>
         </div>
         <img className="card-movie__poster" src={poster} alt={title} />
         <div className="card-movie__data">
@@ -74,7 +64,6 @@ function Movie({ id, title, summary, poster, genres, videoId }) {
           <p className="card-movie__summary">{summary}</p>
         </div>
       </div>
-      <Modal open={modal} close={closeModal} videoId={videoId}/>
     </Fragment>
   ) 
 }
