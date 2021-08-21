@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import './Skeleton.css'
 import SkeletonHeart from './../../assets/skeleton-heart.svg';
 
-
 function Skeleton() {
   return (
     <Fragment>

@@ -1,5 +1,6 @@
-import  React, { Fragment } from 'react';
+import  React, { Fragment } from 'react'
 import axios from 'axios'
+import Header from './components/Header/Header'
 import Main from './components/Main/Main'
 import Movie from './components/Movie/Movie'
 import Skeleton from './components//Skeleton/Skeleton'
@@ -37,35 +38,38 @@ class App extends React.Component {
     const { isLoading, main, movies, isModalOpen, videoId } = this.state
 
     return (
-      <main className="container">
-        { isLoading ? (
-          <Skeleton />
-        ) : ( 
-          <Fragment>
-            <Main 
-              title={main.title}
-              summary={main.summary}
-              poster={main.medium_cover_image}
-              bg={main.background_image_original}
-            />
-            <section className="list-movie">
-            {movies.map(movie => (
-              <Movie
-                key={movie.id}
-                id={movie.id.toString()}
-                title={movie.title}
-                summary={movie.summary}
-                poster={movie.medium_cover_image}
-                genres={movie.genres}
-                videoId={movie.yt_trailer_code}
-                handleModalOpen={this.handleModalOpen.bind(this, movie.yt_trailer_code)}
+      <Fragment>
+        <Header />
+        <main className="container">
+          { isLoading ? (
+            <Skeleton />
+          ) : ( 
+            <Fragment>
+              <Main 
+                title={main.title}
+                summary={main.summary}
+                poster={main.medium_cover_image}
+                bg={main.background_image_original}
               />
-            ))}
-            </section>
-            <Modal open={isModalOpen} close={this.handleModalClose} videoId={videoId} />
-          </Fragment>
-        )}
-      </main>
+              <section className="list-movie">
+              {movies.map(movie => (
+                <Movie
+                  key={movie.id}
+                  id={movie.id.toString()}
+                  title={movie.title}
+                  summary={movie.summary}
+                  poster={movie.medium_cover_image}
+                  genres={movie.genres}
+                  videoId={movie.yt_trailer_code}
+                  handleModalOpen={this.handleModalOpen.bind(this, movie.yt_trailer_code)}
+                />
+              ))}
+              </section>
+              <Modal open={isModalOpen} close={this.handleModalClose} videoId={videoId} />
+            </Fragment>
+          )}
+        </main>
+      </Fragment>
     )}
   }
 

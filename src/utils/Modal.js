@@ -7,7 +7,7 @@ import ModalPortal from './ModalPortal';
 function Modal({ open, close, videoId }) {
   const opts = {
     width: '100%',
-    height: '450px',
+    height: '550px',
     playerVars: {
       autoplay: 1
     }
@@ -18,7 +18,7 @@ function Modal({ open, close, videoId }) {
       <div className={ open ? 'modal modal--open' : 'modal'} onClick={close}>
         { open? (
           <section onClick={(e) => e.stopPropagation()}>
-            <YouTube videoId={ videoId } opts={opts}/>
+            <YouTube videoId={videoId} opts={opts}/>
             <button className="close" onClick={close}>close</button>
           </section>
         ) : null }
