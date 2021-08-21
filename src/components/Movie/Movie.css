@@ -40,12 +40,13 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
-  height: 30px;
-  padding: 8px;
-  border: 0;
-  border-bottom: 1px solid #fff;
+  height: 35px;
+  padding: 8px 12px;
+  border: 1.8px solid #fff;
+  border-radius: 20px;
   background: unset;
-  text-align: left;
+  text-align: center;
+  text-transform: uppercase;
   color: #fff;
   cursor: pointer;
 }

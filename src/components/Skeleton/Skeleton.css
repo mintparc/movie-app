@@ -45,7 +45,8 @@
   gap: 50px 20px;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 5% 1.5%;
+  max-width: 1920px;
+  margin: 5% auto;
 }
 
 .card-skeleton {
@@ -117,7 +118,7 @@
   background-color: #ededed;
   background: linear-gradient(120deg,
       rgba(255, 255, 255, 0) 40%,
-      rgba(255, 255, 255, .3) 50%,
+      rgba(255, 255, 255, .2) 50%,
       rgba(255, 255, 255, 0) 60%)#ededed;
   background-size: 220% 100%;
   background-position-x: 120%;

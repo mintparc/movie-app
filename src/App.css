@@ -1,18 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 
+* {
+  font-family: 'Noto Sans KR', sans-serif !important;
+}
+
 body {
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
   background: #eaebec;
 }
-
-/* .list-movie {
-  display: flex;
-  gap: 50px 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 5%;
-} */
 
 .list-movie {
   display: flex;
@@ -20,5 +16,6 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1920px;
-  margin: 5% 1.5%;
+  margin: 5% auto;
 }
+

@@ -7,7 +7,7 @@ import ModalPortal from './ModalPortal';
 function Modal({ open, close, videoId }) {
   const opts = {
     width: '100%',
-    height: '800',
+    height: '450px',
     playerVars: {
       autoplay: 1
     }

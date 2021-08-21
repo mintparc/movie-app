@@ -52,7 +52,7 @@ function Movie({ id, title, summary, poster, genres, handleModalOpen }) {
     <Fragment>
       <div className="card-movie">
         <div className="card-movie__trailer">
-          <button onClick={handleModalOpen}>▶︎ Watch Trailer</button>
+          <button onClick={handleModalOpen}>▶︎ show trailer</button>
         </div>
         <img className="card-movie__poster" src={poster} alt={title} />
         <div className="card-movie__data">
