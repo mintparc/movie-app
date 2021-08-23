@@ -189,7 +189,16 @@ axios.get('/user?ID=12345')
 <br/>
 
 ## 6. Portal
+portal은 부모 컴포넌트의 DOM 계층 구조 바깥에 있는 DOM 노드로 자식을 렌더링하는 방법이다.
 
+```javascript
+ReactDOM.createPortal(child, container)
+```
+
+첫 번째 인자 `child` 는 어떤 종류든 렌더링할 수 있다. (엘리먼트, 문자열, fragment ...)  
+두 번째 인자 `container` 는 DOM 엘리먼트이다.
+
+<br/>
 
 ## 10. 내가 마주한 에러
 > React key prop
