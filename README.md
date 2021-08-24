@@ -9,6 +9,8 @@ A movie app with React 🎞 ✨
 ## Web
 https://mintparc.github.io/movie-app/
 <br/><br/>
+![movieapp](https://user-images.githubusercontent.com/53563513/130631446-8bccbd8a-0439-46ff-a42d-7c631c489ab9.png)\
+<br/><br/>
 
 ## What I Learned
 [프로젝트를 통해 배운 것들](./What-I-Learned.md)
