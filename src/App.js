@@ -1,6 +1,7 @@
 import  React, { Fragment } from 'react'
 import axios from 'axios'
 import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import Main from './components/Main/Main'
 import Movie from './components/Movie/Movie'
 import Skeleton from './components//Skeleton/Skeleton'
@@ -69,6 +70,7 @@ class App extends React.Component {
             </Fragment>
           )}
         </main>
+        <Footer />
       </Fragment>
     )}
   }

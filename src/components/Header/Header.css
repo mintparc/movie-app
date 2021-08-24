@@ -11,9 +11,20 @@
 }
 
 .header__logo {
+  width: fit-content;
   max-width: 1920px;
   height: 80px;
   line-height: 80px;
   margin: 0 5%;
   font-family: 'Black Han Sans', sans-serif !important;
+}
+
+.header__logo::after {
+  content: "";
+  float: right;
+  width: 15px;
+  height: 15px;
+  margin: 15px 10px 10px;
+  border-radius: 50%;
+  background: #FF7B54;
 }
