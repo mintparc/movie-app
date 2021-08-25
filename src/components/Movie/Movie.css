@@ -40,6 +40,7 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
+  width: fit-content;
   height: 35px;
   padding: 8px 12px;
   border: 1.8px solid #fff;
@@ -48,6 +49,7 @@
   text-align: center;
   text-transform: uppercase;
   line-height: 2px;
+  font-size: 0.8rem;
   color: #fff;
   cursor: pointer;
 }
@@ -88,8 +90,9 @@
 }
 
 .card-movie__title {
+  width: inherit;
   margin: 0 0 12px 2px;
-  font-size: 20px;
+  font-size: 1.3rem
 }
 
 .card-movie__genres {
@@ -98,10 +101,11 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 
 .card-movie__genre {
+  width: fit-content;
   margin-right: 4px;
   margin-bottom: 4px;
   padding: 4px 8px;
@@ -121,7 +125,7 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 0.9rem;
   line-height: 1.7;
 }
 

@@ -38,6 +38,7 @@
   width: 50%;
   height: 260px;
   border-radius: 5px;
+  margin: 0;
 }
 
 .list-skeleton {
@@ -157,6 +158,8 @@
   .card-skeleton {
     width: 100%;
     min-width: 300px;
+    max-width: unset;
+    flex-basis: unset;
     margin: 0 4%;
   }
 
@@ -175,13 +178,15 @@
   }
 
   .card-skeleton__title {
-    width: 100%;
+    width: 80%;
   }
 
   .card-skeleton__genres {
     position: absolute;
-    width: 90%;
+    width: 70%;
+    height: 100px;
     bottom: 0;
+    margin: 0;
   }
 
   .card-skeleton__heart,
