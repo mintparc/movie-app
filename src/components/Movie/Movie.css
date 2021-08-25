@@ -73,7 +73,7 @@
 
 .card-movie__heart {
   width: 28px;
-  height: 28x;
+  height: 28px;
   position: absolute;
   top: 0;
   left: 375px;
@@ -82,15 +82,14 @@
 
 .card-movie__data {
   position: absolute;
-  left: 200px;
-  width: 50%;
   height: 240px;
+  left: 200px;
   padding: 0 30px;
   overflow: hidden;
 }
 
 .card-movie__title {
-  width: inherit;
+  width: 360px;
   margin: 0 0 12px 2px;
   font-size: 1.3rem
 }
@@ -119,6 +118,7 @@
 .card-movie__summary {
   position: absolute;
   bottom: 0;
+  width: 360px;
   margin-top: 60px;
   white-space: normal;
   display: -webkit-box;
@@ -150,6 +150,10 @@
     height: 281px;
     border-radius: 5px 0 0 5px;
     box-shadow: unset;
+  }
+
+  .card-movie__title {
+    width: inherit;
   }
 
   .card-movie__data {
